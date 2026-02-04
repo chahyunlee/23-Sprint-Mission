@@ -23,11 +23,11 @@
       </section>
       <section class="login-body">
         <div class="login-form">
-          <div>
+          <div class="login-form-input-wrapper">
             <label for="user-id">이메일</label>
             <input id="user-id" class="login-form-input" type="email" />
           </div>
-          <div>
+          <div class="login-form-input-wrapper">
             <label for="user-password">비밀번호</label>
             <input
               id="user-password"
@@ -36,7 +36,33 @@
             />
           </div>
           <button class="login-button">로그인</button>
-          <div class="login-social">간편 로그인 하기</div>
+          <div class="login-social">
+            <div class="login-social-label">간편 로그인 하기</div>
+            <div class="login-social-buttons">
+              <a
+                href="https://www.google.com"
+                target="_blank"
+                class="login-social-btn login-social-btn--google"
+              >
+                <img
+                  src="../../assets/icons/google-icon.svg"
+                  alt="구글"
+                  class="login-social-icon"
+                />
+              </a>
+              <a
+                href="https://www.kakaocorp.com/page/"
+                target="_blank"
+                class="login-social-btn login-social-btn--kakao"
+              >
+                <img
+                  src="../../assets/icons/kakaotalk-icon.svg"
+                  alt="카카오"
+                  class="login-social-icon"
+                />
+              </a>
+            </div>
+          </div>
           <span>
             판다마켓이 처음이신가요?
             <a href="/signup">회원가입</a>
