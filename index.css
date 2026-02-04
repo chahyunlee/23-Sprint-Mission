@@ -167,9 +167,22 @@
 .footer-content-policy > a {
   color: var(--bg-white);
 }
+
 .footer-content-icons {
   display: flex;
   gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-social img {
+  width: 24px;
+  height: 24px;
 }
 
 /*재사용 하지 않는 스타일*/
