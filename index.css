@@ -1,14 +1,17 @@
 /* 재사용하는 스타일 */
 .gnb {
-  width: 1120px;
-  margin: 9.5px auto;
-  max-width: 1920px;
+  width: 100%;
+  padding: 9.5px 0;
+  background-color: var(--bg-white);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .gnb > nav {
   display: flex;
   align-items: center;
-  margin: 0px auto;
+  margin: 0 auto;
   justify-content: space-between;
 
   max-width: 1120px;
