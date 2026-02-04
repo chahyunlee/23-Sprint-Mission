@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="../../styles/reset.css" />
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <main>
+      <section class="login-header">
+        <a href="/">
+          <img src="/assets/images/logo.svg" alt="판다마켓 로고" class="logo" />
+        </a>
+      </section>
+      <section class="login-body">
+        <div class="login-form">
+          <div>
+            <label for="user-id">아이디</label>
+            <input id="user-id" type="text" label="아이디" />
+          </div>
+          <div>
+            <label for="user-password">비밀번호</label>
+            <input id="user-password" type="password" label="비밀번호" />
+          </div>
+          <button>로그인</button>
+          <div>간편 로그인 하기</div>
+          <span
+            >판다마켓이 처음이신가요?
+            <a href="/signup">회원가입</a>
+          </span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
