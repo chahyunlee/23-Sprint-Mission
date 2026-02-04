@@ -41,12 +41,23 @@ main {
   font-size: 14px;
   font-weight: 600;
 }
+.auth-form-input-container {
+  position: relative;
+}
 .auth-form-input {
   width: 100%;
   background-color: var(--secondary-100);
   padding: 16px 20px;
   border: none;
   border-radius: 8px;
+}
+.auth-form-input-icon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .auth-button {
