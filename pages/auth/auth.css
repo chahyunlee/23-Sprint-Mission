@@ -14,34 +14,34 @@ main {
   gap: 40px;
 }
 
-/* login.css */
+/* auth.css */
 .logo {
   width: 320px;
 }
-.login-header {
+.auth-header {
   display: flex;
   justify-content: center;
 }
-.login-body {
+.auth-body {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.login-form {
+.auth-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.login-form-input-wrapper {
+.auth-form-input-wrapper {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.login-form label {
+.auth-form label {
   font-size: 14px;
   font-weight: 600;
 }
-.login-form-input {
+.auth-form-input {
   width: 100%;
   background-color: var(--secondary-100);
   padding: 16px 20px;
@@ -49,7 +49,7 @@ main {
   border-radius: 8px;
 }
 
-.login-button {
+.auth-button {
   padding: 12px;
   border: none;
   border-radius: 24px;
@@ -91,15 +91,15 @@ main {
   height: 20px;
 }
 
-.login-form span {
+.auth-form span {
   text-align: center;
   font-size: 12px;
 }
-.login-form span a {
+.auth-form span a {
   margin-left: 4px;
   color: var(--primary-100);
   text-decoration: underline;
 }
-.login-form span a:hover {
+.auth-form span a:hover {
   color: var(--primary-200);
 }

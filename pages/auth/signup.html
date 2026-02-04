@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로그인</title>
+    <title>회원가입</title>
     <link
       rel="stylesheet"
       as="style"
@@ -12,32 +12,40 @@
     />
     <link rel="stylesheet" href="../../styles/reset.css" />
     <link rel="stylesheet" href="../../styles/global.css" />
-    <link rel="stylesheet" href="./login.css" />
+    <link rel="stylesheet" href="./auth.css" />
   </head>
   <body>
     <main>
-      <section class="login-header">
+      <section class="auth-header">
         <a href="/">
           <img src="/assets/images/logo.svg" alt="판다마켓 로고" class="logo" />
         </a>
       </section>
-      <section class="login-body">
-        <div class="login-form">
-          <div class="login-form-input-wrapper">
+      <section class="auth-body">
+        <div class="auth-form">
+          <div class="auth-form-input-wrapper">
             <label for="user-id">이메일</label>
-            <input id="user-id" class="login-form-input" type="email" />
+            <input id="user-id" class="auth-form-input" type="email" />
           </div>
-          <div class="login-form-input-wrapper">
+          <div class="auth-form-input-wrapper">
+            <label for="user-nickname">닉네임</label>
+            <input id="user-nickname" class="auth-form-input" type="text" />
+          </div>
+          <div class="auth-form-input-wrapper">
             <label for="user-password">비밀번호</label>
+            <input id="user-password" class="auth-form-input" type="password" />
+          </div>
+          <div class="auth-form-input-wrapper">
+            <label for="user-password-check">비밀번호 확인</label>
             <input
-              id="user-password"
-              class="login-form-input"
+              id="user-password-check"
+              class="auth-form-input"
               type="password"
             />
           </div>
-          <button class="login-button">로그인</button>
+          <button class="auth-button">회원가입</button>
           <div class="login-social">
-            <div class="login-social-label">간편 로그인 하기</div>
+            <div class="login-social-label">간편 로그인하기</div>
             <div class="login-social-buttons">
               <a
                 href="https://www.google.com"
@@ -64,8 +72,8 @@
             </div>
           </div>
           <span>
-            판다마켓이 처음이신가요?
-            <a href="/signup">회원가입</a>
+            이미 회원이신가요?
+            <a href="/pages/auth/login.html">로그인</a>
           </span>
         </div>
       </section>
