@@ -1,0 +1,116 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--secondary-800);
+}
+main {
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* auth.css */
+.logo {
+  width: 320px;
+}
+.auth-header {
+  display: flex;
+  justify-content: center;
+}
+.auth-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.auth-form-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.auth-form label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.auth-form-input-container {
+  position: relative;
+}
+.auth-form-input {
+  width: 100%;
+  background-color: var(--secondary-100);
+  padding: 16px 20px;
+  border: none;
+  border-radius: 8px;
+}
+.auth-form-input-icon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.auth-button {
+  padding: 12px;
+  border: none;
+  border-radius: 24px;
+  font-size: 18px;
+  color: var(--secondary-100);
+  background-color: var(--primary-100);
+  cursor: pointer;
+}
+
+.login-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 6px;
+  background-color: var(--primary-400);
+  font-size: 14px;
+}
+.login-social-buttons {
+  display: flex;
+  gap: 12px;
+}
+.login-social-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.login-social-btn--google {
+  background-color: var(--bg-white);
+}
+.login-social-btn--kakao {
+  background-color: #f5e14b;
+}
+.login-social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.auth-form span {
+  text-align: center;
+  font-size: 12px;
+}
+.auth-form span a {
+  margin-left: 4px;
+  color: var(--primary-100);
+  text-decoration: underline;
+}
+.auth-form span a:hover {
+  color: var(--primary-200);
+}

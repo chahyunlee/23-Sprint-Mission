@@ -1,14 +1,17 @@
 /* 재사용하는 스타일 */
 .gnb {
-  width: 1120px;
-  margin: 9.5px auto;
-  max-width: 1920px;
+  width: 100%;
+  padding: 9.5px 0;
+  background-color: var(--bg-white);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .gnb > nav {
   display: flex;
   align-items: center;
-  margin: 0px auto;
+  margin: 0 auto;
   justify-content: space-between;
 
   max-width: 1120px;
@@ -164,9 +167,22 @@
 .footer-content-policy > a {
   color: var(--bg-white);
 }
+
 .footer-content-icons {
   display: flex;
   gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-social img {
+  width: 24px;
+  height: 24px;
 }
 
 /*재사용 하지 않는 스타일*/
