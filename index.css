@@ -9,12 +9,11 @@
 }
 
 .gnb > nav {
+  max-width: 1120px;
   display: flex;
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
-
-  max-width: 1120px;
 }
 
 .btn-small-48 {
@@ -42,7 +41,8 @@
 }
 
 .btn-large {
-  padding: 16px 124px;
+  width: 320px;
+  padding: 12px 0;
   background-color: var(--primary-100);
   border-radius: 40px;
   color: var(--secondary-100);
@@ -72,13 +72,15 @@
 }
 
 .landing-header {
+  width: 100%;
   background-color: var(--bg-blue);
   padding-top: 200px;
 }
 
 .landing-header > div {
-  width: 1110px;
+  max-width: 1110px;
   margin: auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,6 +97,7 @@
 .landing-header-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 32px;
   margin-bottom: 60px;
   word-break: keep-all;
@@ -112,8 +115,9 @@
   align-items: center;
   gap: 64px;
 
-  width: 988px;
+  width: 100%;
   margin: 138px auto;
+  padding: 0 20px;
   background-color: var(--bg-gray);
 }
 
@@ -146,15 +150,15 @@
 }
 
 .footer {
+  width: 100%;
   height: 160px;
   background-color: var(--secondary-900);
 }
 
 .footer-content {
-  margin: auto;
+  margin: 0 auto;
   padding: 32px;
-  width: 1120px;
-  background-color: var(--secondary-900);
+  max-width: 1120px;
   display: flex;
   justify-content: space-between;
   color: var(--bg-white);
@@ -208,11 +212,45 @@
   .gnb {
     padding: 9.5px 24px;
   }
+  .gnb > nav {
+    padding: 0 24px;
+    width: 100%;
+  }
+
+  .landing-header > div {
+    padding: 24px 16px 0;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+  }
+  .landing-heading {
+    font-size: 36px;
+  }
 }
 
 /* 모바일 뷰 */
-@media (min-width: 375px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .gnb {
     padding: 9.5px 16px;
+  }
+  .gnb > nav {
+    padding: 0 8px;
+    width: 100%;
+  }
+
+  .btn-large {
+    width: 260px;
+  }
+
+  .landing-header > div {
+    padding: 16px 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+  }
+  .landing-heading {
+    text-align: center;
+    font-size: 30px;
   }
 }
