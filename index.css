@@ -202,3 +202,17 @@
   text-align: right;
   margin-left: 14px;
 }
+
+/* 태블릿 뷰 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .gnb {
+    padding: 9.5px 24px;
+  }
+}
+
+/* 모바일 뷰 */
+@media (min-width: 375px) and (max-width: 767px) {
+  .gnb {
+    padding: 9.5px 16px;
+  }
+}
