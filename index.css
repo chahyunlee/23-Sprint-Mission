@@ -218,29 +218,13 @@
   margin-left: 14px;
 }
 
-/* 태블릿 뷰 */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .gnb {
-    padding: 9.5px 24px;
-  }
-  .gnb > nav {
-    padding: 0 24px;
-    width: 100%;
-  }
-
+/* 태블릿 모바일 공통 구조(1199px 이하) */
+@media (max-width: 1199px) {
   .landing-header > div {
-    padding: 24px 16px 0;
+    padding: 12px 16px 0;
     flex-direction: column;
     gap: 20px;
     max-width: 100%;
-  }
-  .landing-header img {
-    max-width: 600px;
-    width: 100%;
-  }
-
-  .landing-heading {
-    font-size: 36px;
   }
 
   .landing-home {
@@ -255,32 +239,48 @@
   .landing-home img {
     width: 100%;
   }
-  .landing-home--reverse {
+
+  .landing-home-content--reverse {
     text-align: right;
-    align-items: flex-start;
+    align-self: flex-end;
+  }
+
+  .landing-footer-content {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .landing-footer-content h1 {
+    text-align: center;
+  }
+}
+
+/* 태블릿 뷰 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .gnb {
+    padding: 9.5px 24px;
+  }
+  .gnb > nav {
+    padding: 0 24px;
+    width: 100%;
+  }
+
+  .landing-header img {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .landing-heading {
+    font-size: 36px;
   }
 
   .landing-home-content.w-288 {
     width: 100%;
     max-width: 600px;
   }
-  .landing-home-content--reverse {
-    text-align: right;
-    align-self: flex-end;
-  }
 
   .landing-footer {
     margin-top: 60px;
   }
-  .landing-footer-content {
-    flex-direction: column;
-    gap: 60px;
-  }
-
-  .landing-footer-content h1 {
-    text-align: center;
-  }
-
   .landing-footer-content img {
     width: 100%;
     max-width: 600px;
@@ -301,13 +301,6 @@
     width: 260px;
   }
 
-  .landing-header > div {
-    padding: 16px 16px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 100%;
-  }
   .landing-header img {
     max-width: 400px;
     width: 100%;
@@ -317,40 +310,14 @@
     font-size: 24px;
   }
 
-  .landing-home {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    background-color: var(--bg-white);
-    margin: 16px;
-    white-space: nowrap;
-  }
-  .landing-home img {
-    width: 100%;
-  }
-
   .landing-home-content.w-288 {
     width: 100%;
     max-width: 360px;
-  }
-  .landing-home-content--reverse {
-    text-align: right;
-    align-self: flex-end;
   }
 
   .landing-footer {
     margin-top: 36px;
   }
-  .landing-footer-content {
-    flex-direction: column;
-    gap: 60px;
-  }
-
-  .landing-footer-content h1 {
-    text-align: center;
-  }
-
   .landing-footer-content img {
     width: 100%;
     max-width: 400px;
