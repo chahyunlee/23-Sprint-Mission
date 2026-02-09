@@ -92,6 +92,7 @@
   font-size: 40px;
   line-height: 1.4em;
   color: var(--secondary-700);
+  word-break: keep-all;
 }
 
 .landing-header-content {
@@ -104,6 +105,7 @@
 }
 
 .landing-body {
+  width: 100%;
   background-color: var(--bg-white);
   display: flex;
   flex-direction: column;
@@ -112,13 +114,18 @@
 
 .landing-home {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 64px;
 
   width: 100%;
+  max-width: 988px;
   margin: 138px auto;
   padding: 0 20px;
   background-color: var(--bg-gray);
+}
+.landing-home--reverse {
+  flex-direction: row-reverse;
 }
 
 .landing-home-content > span {
@@ -226,6 +233,32 @@
   .landing-heading {
     font-size: 36px;
   }
+
+  .landing-home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    background-color: var(--bg-white);
+    margin: 16px;
+    white-space: nowrap;
+  }
+  .landing-home img {
+    width: 100%;
+  }
+  .landing-home--reverse {
+    text-align: right;
+    align-items: flex-start;
+  }
+
+  .landing-home-content.w-288 {
+    width: 100%;
+    max-width: 600px;
+  }
+  .landing-home-content--reverse {
+    text-align: right;
+    align-self: flex-end;
+  }
 }
 
 /* 모바일 뷰 */
@@ -250,7 +283,28 @@
     max-width: 100%;
   }
   .landing-heading {
-    text-align: center;
-    font-size: 30px;
+    font-size: 24px;
+  }
+
+  .landing-home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    background-color: var(--bg-white);
+    margin: 16px;
+    white-space: nowrap;
+  }
+  .landing-home img {
+    width: 100%;
+  }
+
+  .landing-home-content.w-288 {
+    width: 100%;
+    max-width: 360px;
+  }
+  .landing-home-content--reverse {
+    text-align: right;
+    align-self: flex-end;
   }
 }
