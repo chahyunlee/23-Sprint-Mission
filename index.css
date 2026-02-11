@@ -1,4 +1,6 @@
-/* 재사용하는 스타일 */
+/*** 재사용하는 스타일 ***/
+
+/* 네비게이션 바 스타일*/
 .gnb {
   width: 100%;
   padding: 9.5px 0;
@@ -9,76 +11,67 @@
 }
 
 .gnb > nav {
+  max-width: 1120px;
   display: flex;
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
-
-  max-width: 1120px;
 }
 
-.btn-small-48 {
-  padding: 12px 23px;
-  background-color: var(--primary-100);
-  border-radius: 8px;
-  color: var(--secondary-100);
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-
-  font: var(--text-lg);
-}
-
-.btn-small-48:hover {
-  background-color: var(--primary-200);
-}
-
-.btn-small-48:active {
-  background-color: var(--primary-300);
-}
-
-.btn-small-48:disabled {
-  background-color: var(--primary-400);
-}
-
+/* 버튼 스타일 */
+.btn-small-48,
 .btn-large {
-  padding: 16px 124px;
   background-color: var(--primary-100);
-  border-radius: 40px;
   color: var(--secondary-100);
-  vertical-align: middle;
-  text-align: center;
+  border: none;
   cursor: pointer;
-
   font: var(--text-lg);
+  text-align: center;
+  vertical-align: middle;
 }
 
+.btn-small-48:hover,
 .btn-large:hover {
   background-color: var(--primary-200);
 }
 
+.btn-small-48:active,
 .btn-large:active {
   background-color: var(--primary-300);
 }
 
+.btn-small-48:disabled,
 .btn-large:disabled {
   background-color: var(--primary-400);
 }
 
-/* index.css */
+.btn-small-48 {
+  padding: 12px 23px;
+  border-radius: 8px;
+}
+
+.btn-large {
+  width: 320px;
+  padding: 12px 0;
+  border-radius: 40px;
+}
+
+/*** index.css ***/
 .login-button {
   width: 128px;
   height: 48px;
 }
 
 .landing-header {
+  width: 100%;
   background-color: var(--bg-blue);
   padding-top: 200px;
 }
 
 .landing-header > div {
-  width: 1110px;
+  max-width: 1110px;
   margin: auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,17 +83,19 @@
   font-size: 40px;
   line-height: 1.4em;
   color: var(--secondary-700);
+  word-break: keep-all;
 }
 
 .landing-header-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 32px;
   margin-bottom: 60px;
-  word-break: keep-all;
 }
 
 .landing-body {
+  width: 100%;
   background-color: var(--bg-white);
   display: flex;
   flex-direction: column;
@@ -109,12 +104,18 @@
 
 .landing-home {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 64px;
 
-  width: 988px;
+  width: 100%;
+  max-width: 988px;
   margin: 138px auto;
+  padding: 0 20px;
   background-color: var(--bg-gray);
+}
+.landing-home--reverse {
+  flex-direction: row-reverse;
 }
 
 .landing-home-content > span {
@@ -135,26 +136,30 @@
 }
 
 .landing-footer {
+  width: 100%;
   background-color: var(--bg-blue);
-  padding-top: 200px;
 }
 .landing-footer-content {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 100px 20px 0;
+  gap: 20px;
 }
 
 .footer {
-  height: 160px;
+  width: 100%;
+  padding-bottom: 60px;
   background-color: var(--secondary-900);
 }
 
 .footer-content {
-  margin: auto;
+  margin: 0 auto;
   padding: 32px;
-  width: 1120px;
-  background-color: var(--secondary-900);
+  max-width: 1120px;
   display: flex;
   justify-content: space-between;
   color: var(--bg-white);
@@ -175,17 +180,17 @@
   padding: 0;
   margin: 0;
 }
-.footer-social a {
+.footer-content-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.footer-social img {
+.footer-content-icons img {
   width: 24px;
   height: 24px;
 }
 
-/*재사용 하지 않는 스타일*/
+/*** 재사용 하지 않는 스타일 ***/
 .w-274 {
   width: 274px;
 }
@@ -201,4 +206,131 @@
 .text-right {
   text-align: right;
   margin-left: 14px;
+}
+
+/*** 태블릿 모바일 공통 구조 (1199px 이하) ***/
+@media (max-width: 1199px) {
+  .landing-header > div {
+    padding: 12px 16px 0;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .landing-home {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    background-color: var(--bg-white);
+    margin: 16px;
+    white-space: nowrap;
+  }
+  .landing-home img {
+    width: 100%;
+  }
+
+  .landing-home-content--reverse {
+    text-align: right;
+    align-self: flex-end;
+  }
+
+  .landing-footer-content {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .landing-footer-content h1 {
+    text-align: center;
+  }
+}
+
+/*** 태블릿 뷰 ***/
+@media (min-width: 768px) and (max-width: 1199px) {
+  .gnb {
+    padding: 9.5px 24px;
+  }
+  .gnb > nav {
+    padding: 0 24px;
+    width: 100%;
+  }
+
+  .landing-header img {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .landing-heading {
+    font-size: 36px;
+  }
+
+  .landing-home-content.w-288 {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .landing-footer {
+    margin-top: 60px;
+  }
+  .landing-footer-content img {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+/*** 모바일 뷰 ***/
+@media (max-width: 767px) {
+  .gnb {
+    padding: 9.5px 16px;
+  }
+  .gnb > nav {
+    padding: 0 8px;
+    width: 100%;
+  }
+
+  .btn-large {
+    width: 260px;
+  }
+
+  .landing-header img {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .landing-heading {
+    font-size: 24px;
+  }
+
+  .landing-home-content.w-288 {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .landing-footer {
+    margin-top: 36px;
+  }
+  .landing-footer-content img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .footer {
+    padding-bottom: 0;
+  }
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-content-policy {
+    order: 1;
+    flex: 1 1 auto;
+    gap: 16px;
+  }
+  .footer-content-icons {
+    order: 2;
+    flex: 0 0 auto;
+  }
+  .footer-content > p {
+    order: 3;
+    flex: 0 0 100%;
+  }
 }
