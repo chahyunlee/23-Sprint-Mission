@@ -26,6 +26,7 @@
           <div class="auth-form-input-wrapper">
             <label for="login-email">이메일</label>
             <input id="login-email" class="auth-form-input" type="email" />
+            <span class="error-message" id="email-error"></span>
           </div>
           <div class="auth-form-input-wrapper">
             <label for="login-password">비밀번호</label>
@@ -43,8 +44,11 @@
                 <img src="/assets/icons/btn-visibility-on.svg" alt="보기" />
               </button>
             </div>
+            <span class="error-message" id="password-error"></span>
           </div>
-          <button type="submit" class="auth-button">로그인</button>
+          <button type="submit" class="auth-button" id="login-button" disabled>
+            로그인
+          </button>
           <div class="login-social">
             <div class="login-social-label">간편 로그인하기</div>
             <div class="login-social-buttons">
@@ -72,12 +76,13 @@
               </a>
             </div>
           </div>
-          <span>
+          <span class="signup-message">
             판다마켓이 처음이신가요?
             <a href="/pages/auth/signup.html">회원가입</a>
           </span>
         </div>
       </section>
     </main>
+    <script type="module" src="./login.js"></script>
   </body>
 </html>
