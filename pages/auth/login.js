@@ -1,5 +1,6 @@
 import {
   validateEmail,
+  validatePassword,
   hasError,
   removeError,
 } from "../../scripts/validation.js";
@@ -10,13 +11,16 @@ import {
 
 const emailInput = document.getElementById("login-email");
 const emailError = document.getElementById("email-error");
+const passwordInput = document.getElementById("login-password");
+const passwordError = document.getElementById("password-error");
 const loginButton = document.getElementById("login-button");
 
 const checkButtonState = () => {
   const isEmailInputFilled = emailInput.value.trim() !== "";
+  const isPasswordInputFilled = passwordInput.value.trim() !== "";
   const hasNoErrors = !hasError(emailInput) && !hasError(passwordInput);
 
-  if (isEmailInputFilled && hasNoErrors) {
+  if (isEmailInputFilled && isPasswordInputFilled && hasNoErrors) {
     loginButton.disabled = false;
   } else {
     loginButton.disabled = true;
@@ -31,5 +35,16 @@ emailInput.addEventListener("input", () => {
 });
 emailInput.addEventListener("blur", () => {
   validateEmail(emailInput, emailError);
+  checkButtonState();
+});
+
+passwordInput.addEventListener("input", () => {
+  if (passwordInput.value.trim()) {
+    removeError(passwordInput, passwordError);
+  }
+  checkButtonState();
+});
+passwordInput.addEventListener("blur", () => {
+  validatePassword(passwordInput, passwordError);
   checkButtonState();
 });

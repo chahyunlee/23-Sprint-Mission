@@ -15,8 +15,7 @@ export const removeError = (inputElement, errorElement) => {
 
 //이메일 형식 검증
 export const isValidEmail = (email) => {
-  const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailFormat.test(email);
+  return email.includes("@") && email.includes(".");
 };
 //이메일 검증
 export const validateEmail = (inputElement, errorElement) => {
@@ -28,6 +27,27 @@ export const validateEmail = (inputElement, errorElement) => {
   }
   if (!isValidEmail(value)) {
     showError(inputElement, errorElement, "잘못된 이메일 형식입니다.");
+    return false;
+  }
+  removeError(inputElement, errorElement);
+  return true;
+};
+
+//비밀번호 8자 이상 검증
+export const isValidPassword = (password) => {
+  const minLength = 8;
+  return password.length >= minLength;
+};
+//비밀번호 검증
+export const validatePassword = (inputElement, errorElement) => {
+  const value = inputElement.value.trim();
+
+  if (!value) {
+    showError(inputElement, errorElement, "비밀번호를 입력해주세요.");
+    return false;
+  }
+  if (!isValidPassword(value)) {
+    showError(inputElement, errorElement, "비밀번호를 8자 이상 입력해주세요.");
     return false;
   }
   removeError(inputElement, errorElement);
