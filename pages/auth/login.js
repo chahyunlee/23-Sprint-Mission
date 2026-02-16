@@ -15,7 +15,7 @@ const passwordInput = document.getElementById("login-password");
 const passwordError = document.getElementById("password-error");
 const loginButton = document.getElementById("login-button");
 
-const checkButtonState = () => {
+const checkLoginButtonState = () => {
   const isEmailInputFilled = emailInput.value.trim() !== "";
   const isPasswordInputFilled = passwordInput.value.trim() !== "";
   const hasNoErrors = !hasError(emailInput) && !hasError(passwordInput);
@@ -31,20 +31,20 @@ emailInput.addEventListener("input", () => {
   if (emailInput.value.trim()) {
     removeError(emailInput, emailError);
   }
-  checkButtonState();
+  checkLoginButtonState();
 });
 emailInput.addEventListener("blur", () => {
   validateEmail(emailInput, emailError);
-  checkButtonState();
+  checkLoginButtonState();
 });
 
 passwordInput.addEventListener("input", () => {
   if (passwordInput.value.trim()) {
     removeError(passwordInput, passwordError);
   }
-  checkButtonState();
+  checkLoginButtonState();
 });
 passwordInput.addEventListener("blur", () => {
   validatePassword(passwordInput, passwordError);
-  checkButtonState();
+  checkLoginButtonState();
 });
