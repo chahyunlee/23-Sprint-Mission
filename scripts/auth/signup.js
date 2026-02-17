@@ -1,11 +1,11 @@
 import {
   validateEmail,
+  validateNickname,
   validatePassword,
-  isPasswordMatch,
+  validatePasswordMatch,
   hasError,
-  removeError,
-  showError,
-} from "../../scripts/validation.js";
+} from "../validation.js";
+import { checkInputField } from "../inputHandler.js";
 
 //이메일이 비어있지 않을 때
 //닉네임이 비어있지 않을 때
@@ -50,54 +50,24 @@ const checkSignupButtonState = () => {
   }
 };
 
-//이메일
-emailInput.addEventListener("input", () => {
-  if (emailInput.value.trim()) {
-    removeError(emailInput, emailError);
-  }
-  checkSignupButtonState();
-});
-emailInput.addEventListener("blur", () => {
-  validateEmail(emailInput, emailError);
-  checkSignupButtonState();
-});
-
-//닉네임
-nicknameInput.addEventListener("input", () => {
-  if (nicknameInput.value.trim()) {
-    removeError(nicknameInput, nicknameError);
-  }
-  checkSignupButtonState();
-});
-nicknameInput.addEventListener("blur", () => {
-  if (!nicknameInput.value.trim()) {
-    showError(nicknameInput, nicknameError, "닉네임을 입력해주세요.");
-  } else {
-    removeError(nicknameInput, nicknameError);
-  }
-  checkSignupButtonState();
-});
-
-//비밀번호
-passwordInput.addEventListener("input", () => {
-  if (passwordInput.value.trim()) {
-    removeError(passwordInput, passwordError);
-  }
-  checkSignupButtonState();
-});
-passwordInput.addEventListener("blur", () => {
-  validatePassword(passwordInput, passwordError);
-  checkSignupButtonState();
-});
-
-// 비밀번호 확인
-passwordCheckInput.addEventListener("input", () => {
-  if (passwordCheckInput.value.trim()) {
-    removeError(passwordCheckInput, passwordCheckError);
-  }
-  checkSignupButtonState();
-});
-passwordCheckInput.addEventListener("blur", () => {
-  isPasswordMatch(passwordInput, passwordCheckInput, passwordCheckError);
-  checkSignupButtonState();
-});
+checkInputField(emailInput, emailError, validateEmail, checkSignupButtonState);
+checkInputField(
+  nicknameInput,
+  nicknameError,
+  validateNickname,
+  checkSignupButtonState,
+);
+checkInputField(
+  passwordInput,
+  passwordError,
+  validatePassword,
+  checkSignupButtonState,
+);
+checkInputField(
+  passwordCheckInput,
+  passwordCheckError,
+  (input, error) => {
+    return validatePasswordMatch(passwordInput, input, error);
+  },
+  checkSignupButtonState,
+);

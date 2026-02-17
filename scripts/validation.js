@@ -33,6 +33,18 @@ export const validateEmail = (inputElement, errorElement) => {
   return true;
 };
 
+//닉네임 검증
+export const validateNickname = (inputElement, errorElement) => {
+  const value = inputElement.value.trim();
+
+  if (!value) {
+    showError(inputElement, errorElement, "닉네임을 입력해주세요.");
+    return false;
+  }
+  removeError(inputElement, errorElement);
+  return true;
+};
+
 //비밀번호 8자 이상 검증
 export const isValidPassword = (password) => {
   const minLength = 8;
@@ -55,7 +67,11 @@ export const validatePassword = (inputElement, errorElement) => {
 };
 
 //비밀번호 확인 input 칸 === 비밀번호 input 칸 검증
-export const isPasswordMatch = (passwordInput, inputElement, errorElement) => {
+export const validatePasswordMatch = (
+  passwordInput,
+  inputElement,
+  errorElement,
+) => {
   const password = passwordInput.value.trim();
   const passwordDoubleCheck = inputElement.value.trim();
   if (password !== passwordDoubleCheck) {

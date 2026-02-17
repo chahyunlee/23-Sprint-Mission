@@ -1,9 +1,5 @@
-import {
-  validateEmail,
-  validatePassword,
-  hasError,
-  removeError,
-} from "../../scripts/validation.js";
+import { validateEmail, validatePassword, hasError } from "../validation.js";
+import { checkInputField } from "../inputHandler.js";
 //이메일이 비어있지 않을 때
 //비밀번호가 비어있지 않을 때
 //에러 메세지가 없을 때
@@ -27,24 +23,10 @@ const checkLoginButtonState = () => {
   }
 };
 
-emailInput.addEventListener("input", () => {
-  if (emailInput.value.trim()) {
-    removeError(emailInput, emailError);
-  }
-  checkLoginButtonState();
-});
-emailInput.addEventListener("blur", () => {
-  validateEmail(emailInput, emailError);
-  checkLoginButtonState();
-});
-
-passwordInput.addEventListener("input", () => {
-  if (passwordInput.value.trim()) {
-    removeError(passwordInput, passwordError);
-  }
-  checkLoginButtonState();
-});
-passwordInput.addEventListener("blur", () => {
-  validatePassword(passwordInput, passwordError);
-  checkLoginButtonState();
-});
+checkInputField(emailInput, emailError, validateEmail, checkLoginButtonState);
+checkInputField(
+  passwordInput,
+  passwordError,
+  validatePassword,
+  checkLoginButtonState,
+);
