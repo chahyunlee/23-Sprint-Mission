@@ -10,9 +10,9 @@ import {
 //모두 충족하면 버튼 활성화
 
 const emailInput = document.getElementById("login-email");
-const emailError = document.getElementById("email-error");
+const emailError = document.getElementById("login-email-error");
 const passwordInput = document.getElementById("login-password");
-const passwordError = document.getElementById("password-error");
+const passwordError = document.getElementById("login-password-error");
 const loginButton = document.getElementById("login-button");
 
 const checkLoginButtonState = () => {

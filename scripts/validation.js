@@ -55,14 +55,13 @@ export const validatePassword = (inputElement, errorElement) => {
 };
 
 //비밀번호 확인 input 칸 === 비밀번호 input 칸 검증
-export const isPasswordMatch = (passwordInput, inputElement) => {
+export const isPasswordMatch = (passwordInput, inputElement, errorElement) => {
   const password = passwordInput.value.trim();
   const passwordDoubleCheck = inputElement.value.trim();
   if (password !== passwordDoubleCheck) {
     showError(inputElement, errorElement, "비밀번호가 일치하지 않습니다.");
     return false;
-  } else {
-    removeError(inputElement, errorElement);
-    return true;
   }
+  removeError(inputElement, errorElement);
+  return true;
 };
