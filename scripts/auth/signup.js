@@ -7,6 +7,27 @@ import {
 } from "../validation.js";
 import { checkInputField } from "../inputHandler.js";
 
+function handlePasswordToggle(event) {
+  const button = event.currentTarget;
+  const inputContainer = button.parentElement;
+  const input = inputContainer.querySelector("input");
+  const img = button.querySelector("img");
+
+  if (input.type === "password") {
+    input.type = "text";
+    img.src = "/assets/icons/btn-visibility-off.svg";
+    img.alt = "숨기기";
+  } else {
+    input.type = "password";
+    img.src = "/assets/icons/btn-visibility-on.svg";
+    img.alt = "보기";
+  }
+}
+
+document.querySelectorAll(".password-toggle").forEach((button) => {
+  button.addEventListener("click", handlePasswordToggle);
+});
+
 //이메일이 비어있지 않을 때
 //닉네임이 비어있지 않을 때
 //비밀번호가 8자 이상일 때

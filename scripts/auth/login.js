@@ -11,6 +11,29 @@ const passwordInput = document.getElementById("login-password");
 const passwordError = document.getElementById("login-password-error");
 const loginButton = document.getElementById("login-button");
 
+function handlePasswordToggle(event) {
+  const button = event.currentTarget;
+  const inputContainer = button.parentElement;
+  const input = inputContainer.querySelector("input");
+  const img = button.querySelector("img");
+
+  if (input.type === "password") {
+    input.type = "text";
+    img.src = "/assets/icons/btn-visibility-off.svg";
+    img.alt = "숨기기";
+    button.setAttribute("aria-label", "비밀번호 숨기기");
+  } else {
+    input.type = "password";
+    img.src = "/assets/icons/btn-visibility-on.svg";
+    img.alt = "보기";
+    button.setAttribute("aria-label", "비밀번호 보기");
+  }
+}
+
+document.querySelectorAll(".password-toggle").forEach((button) => {
+  button.addEventListener("click", handlePasswordToggle);
+});
+
 const checkLoginButtonState = () => {
   const isEmailInputFilled = emailInput.value.trim() !== "";
   const isPasswordInputFilled = passwordInput.value.trim() !== "";
